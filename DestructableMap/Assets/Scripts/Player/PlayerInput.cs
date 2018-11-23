@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool schoot()
+    {
+        return Input.GetMouseButtonDown(0);
+    }
 }
