@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Destructable : MonoBehaviour {
     public int health;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+    public GameObject destroyEffect;
+    
 	void Update () {
-		
+	    if(health <= 0)
+        {
+           // Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }	
 	}
 }

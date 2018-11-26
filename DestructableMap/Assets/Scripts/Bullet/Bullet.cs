@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-
-    private Vector3 _target;
+    
     private float _tillDeath;
     private Vector3 _direction;
 
     public float speed;
     public GameObject effect;
+    public float AOE;
+    public LayerMask Destructible;
+    public int damage;
 
 	void Start () {
         _tillDeath = 12f;
@@ -28,4 +30,24 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Envirment"))
+        {
+            Collider2D[] objToDamage = Physics2D.OverlapCircleAll(transform.position, AOE, Destructible);
+            for(int i = 0; i < objToDamage.Length; i++)
+            {
+                objToDamage[i].GetComponent<Destructable>().health -= damage;
+            }
+            //Instantiate(effect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, AOE);
+    }
 }
