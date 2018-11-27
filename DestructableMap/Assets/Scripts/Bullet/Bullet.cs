@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour {
     private Vector3 _direction;
 
     public float speed;
-    public GameObject effect;
+    //public GameObject effect;
     public float AOE;
     public LayerMask Destructible;
     public int damage;
@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour {
     public void SetTarget(Vector3 target)
     {
         _direction = (target - transform.position).normalized;
+        _direction.z = -0.1328125f;
     }
 
 	void Update () {
@@ -27,6 +28,7 @@ public class Bullet : MonoBehaviour {
         _tillDeath -= Time.deltaTime;
         if(_tillDeath <= 0)
         {
+            Debug.Log(_tillDeath);
             Destroy(gameObject);
         }
 	}

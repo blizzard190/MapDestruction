@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class WeaponBase : MonoBehaviour, IWeapon {
 
+    [SerializeField]
+    private float AOE;
+    public LayerMask des;
+    public float timer;
+    public float speed;
+    private Vector3 dir;
+
     public virtual float _AOE
     {
         get
         {
-            throw new NotImplementedException();
+            return AOE;
         }
     }
 
@@ -17,23 +24,15 @@ public class WeaponBase : MonoBehaviour, IWeapon {
     {
         get
         {
-            throw new NotImplementedException();
+            return 1;
         }
     }
 
-    public virtual LayerMask _destructible
+    public LayerMask _destructible
     {
         get
         {
-            throw new NotImplementedException();
-        }
-    }
-
-    public virtual Vector3 _directio
-    {
-        get
-        {
-            throw new NotImplementedException();
+           return des;
         }
     }
 
@@ -49,20 +48,36 @@ public class WeaponBase : MonoBehaviour, IWeapon {
     {
         get
         {
-            throw new NotImplementedException();
+            return speed;
         }
     }
 
-    public virtual float _tillDeath
+    public Vector3 _direction
     {
         get
         {
-            throw new NotImplementedException();
+            return dir;
         }
     }
 
-    public virtual void SetTarget()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        throw new NotImplementedException();
+        if (other.CompareTag("Envirment"))
+        {
+
+            Collider2D[] objToDamage = Physics2D.OverlapCircleAll(transform.position, AOE, _destructible);
+            for (int i = 0; i < objToDamage.Length; i++)
+            {
+                objToDamage[i].GetComponent<Destructable>().health -= _damage;
+            }
+           
+            Destroy(gameObject);
+        }
+    }
+
+    public virtual void SetTarget(Vector3 target)
+    {
+        dir = (target - transform.position).normalized;
+        dir.z = -0.1328125f;
     }
 }

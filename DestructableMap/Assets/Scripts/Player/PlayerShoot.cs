@@ -17,7 +17,7 @@ public class PlayerShoot : MonoBehaviour {
         {
             GameObject bullet = Instantiate(_Bullet) as GameObject;
             bullet.transform.position = this.gameObject.transform.position;
-            bullet.GetComponent<Bullet>().SetTarget(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            bullet.GetComponent<WeaponBase>().SetTarget(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
 	}
 }
