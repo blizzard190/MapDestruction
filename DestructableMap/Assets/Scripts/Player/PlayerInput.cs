@@ -8,4 +8,14 @@ public class PlayerInput : MonoBehaviour {
     {
         return Input.GetMouseButtonDown(0);
     }
+    
+    public bool WeaponSwitchUp()
+    {
+        return Input.GetKeyDown(KeyCode.E);
+    }
+
+    public bool WeaponSwitchDown()
+    {
+        return Input.GetKeyDown(KeyCode.Q);
+    }
 }

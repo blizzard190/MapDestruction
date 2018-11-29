@@ -6,18 +6,25 @@ public class PlayerShoot : MonoBehaviour {
 
     private PlayerInput _PlayerInput;
     [SerializeField]
-    private GameObject _Bullet;
+    private GameObject _Weapon;
+    private WeaponSelect _Weapons;
 
 	void Start () {
         _PlayerInput = GetComponent<PlayerInput>();
+        _Weapons = GetComponent<WeaponSelect>();
 	}
 	
 	void Update () {
         if (_PlayerInput.schoot())
         {
-            GameObject bullet = Instantiate(_Bullet) as GameObject;
+            _Weapon = _Weapons.CurrentWeapon;
+            GameObject weapon = Instantiate(_Weapon) as GameObject;
+            weapon.transform.position = this.gameObject.transform.position;
+            weapon.GetComponent<WeaponBase>().SetTarget(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            
+            /*GameObject bullet = Instantiate(_Bullet) as GameObject;
             bullet.transform.position = this.gameObject.transform.position;
-            bullet.GetComponent<WeaponBase>().SetTarget(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            bullet.GetComponent<WeaponBase>().SetTarget(Camera.main.ScreenToWorldPoint(Input.mousePosition));*/
         }
 	}
 }
