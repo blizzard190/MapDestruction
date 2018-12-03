@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
 
-    public bool schoot()
+    public bool shoot()
     {
         return Input.GetMouseButtonDown(0);
     }

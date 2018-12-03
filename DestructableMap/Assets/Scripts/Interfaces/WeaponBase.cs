@@ -80,4 +80,10 @@ public class WeaponBase : MonoBehaviour, IWeapon {
         dir = (target - transform.position).normalized;
         dir.z = -0.1328125f;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, AOE);
+    }
 }

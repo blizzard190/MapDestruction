@@ -5,10 +5,10 @@ using UnityEngine;
 public class WeaponSelect : MonoBehaviour {
 
     public GameObject CurrentWeapon;
+    public List<GameObject> _Weapons;
 
     private int _weapon = 0;
     private PlayerInput _playerInput;
-    public List<GameObject> _Weapons;
 
     void Start()
     {

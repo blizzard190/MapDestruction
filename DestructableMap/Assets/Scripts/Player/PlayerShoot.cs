@@ -15,7 +15,7 @@ public class PlayerShoot : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (_PlayerInput.schoot())
+        if (_PlayerInput.shoot())
         {
             _Weapon = _Weapons.CurrentWeapon;
             GameObject weapon = Instantiate(_Weapon) as GameObject;
@@ -28,3 +28,4 @@ public class PlayerShoot : MonoBehaviour {
         }
 	}
 }
+  

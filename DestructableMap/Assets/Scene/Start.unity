@@ -5746,6 +5746,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentWeapon: {fileID: 0}
   _Weapons:
-  - {fileID: 1129448124353388, guid: f91b231b058761e45b13fd2698a9b17f, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1394054055809956, guid: efc8e315a9da22341ba847271e4d5f5b, type: 2}
+  - {fileID: 1481304144731824, guid: 9921a17f17e51904e8301288ca2663f1, type: 2}
