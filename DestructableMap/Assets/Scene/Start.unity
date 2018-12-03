@@ -5609,6 +5609,7 @@ GameObject:
   - component: {fileID: 2123686453}
   - component: {fileID: 2123686452}
   - component: {fileID: 2123686451}
+  - component: {fileID: 2123686456}
   - component: {fileID: 2123686450}
   - component: {fileID: 2123686449}
   - component: {fileID: 2123686448}
@@ -5748,3 +5749,23 @@ MonoBehaviour:
   _Weapons:
   - {fileID: 1394054055809956, guid: efc8e315a9da22341ba847271e4d5f5b, type: 2}
   - {fileID: 1481304144731824, guid: 9921a17f17e51904e8301288ca2663f1, type: 2}
+--- !u!50 &2123686456
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123686447}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
