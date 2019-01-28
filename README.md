@@ -1,4 +1,5 @@
 # Terrain destruction
+Deze opdracht is orgineel voor school.
 [prestatie-indicatoren](https://drive.google.com/drive/folders/1y8l0Zr4E8b6gYJui_pSzQaoWr-gEr6JN?usp=sharing)**. Deze toon je aan in dit document.*
 
 Ik heb gekozen om een terrain destruction script te maken. Ik heb dit gekozen omdat ik sinds jong veel games heb gespeeld met terrain destruction als een core gameplay functie, games zoals Minecraft, terraria en Battlefield komen daarbij in gedachten.
